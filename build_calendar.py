@@ -19,6 +19,7 @@ from __future__ import annotations
 
 import argparse
 import json
+import os
 import re
 import sys
 from datetime import datetime, timedelta, timezone
@@ -44,6 +45,7 @@ ALARMS = (("-P1D", "Tomorrow"), ("-PT1H", "In 1 hour"))  # relative to the meet-
 DATE_RE = re.compile(r"(\d{2})/(\d{2})/(\d{2})(?:\s+(\d{1,2}):(\d{2}))?")
 PITCH_RE = re.compile(r"\s+#?(\d+)$")
 NO_FIXTURES_TEXT = "There are currently no fixtures to show"
+MAX_REMOVALS = 3  # more future games than this vanishing in one run = treat as a misread, not a real change
 
 
 # --------------------------------------------------------------------------- fetching
@@ -53,13 +55,15 @@ NO_FIXTURES_TEXT = "There are currently no fixtures to show"
 EXTRACT_ROWS_JS = r"""
 () => {
   const dateRe = /\b\d{2}\/\d{2}\/\d{2}\b/;
-  const rows = [];
+  const rows = [], dated = [];
   for (const tr of document.querySelectorAll('tr')) {
     const cells = Array.from(tr.querySelectorAll('td,th'))
       .map(c => (c.innerText || '').replace(/\s+/g, ' ').trim());
-    if (cells.some(c => dateRe.test(c)) && cells.some(c => /^vs$/i.test(c))) rows.push(cells);
+    if (!cells.some(c => dateRe.test(c))) continue;
+    if (dated.length < 40) dated.push(cells);
+    if (cells.some(c => /^vs$/i.test(c))) rows.push(cells);
   }
-  return rows;
+  return {rows, dated};
 }
 """
 
@@ -70,8 +74,8 @@ HAS_FIXTURES_JS = r"""
 """
 
 
-def fetch_page(url: str) -> tuple[list[list[str]], str]:
-    """Load the team page in headless Chromium; return (fixture rows, page text)."""
+def fetch_page(url: str) -> tuple[list[list[str]], list[list[str]], str]:
+    """Load the team page in headless Chromium; return (fixture rows, dated rows for debugging, page text)."""
     from playwright.sync_api import sync_playwright
 
     with sync_playwright() as p:
@@ -87,10 +91,10 @@ def fetch_page(url: str) -> tuple[list[list[str]], str]:
             page.wait_for_function(HAS_FIXTURES_JS, timeout=45_000)
         except Exception:
             pass  # judged below from whatever loaded
-        rows = page.evaluate(EXTRACT_ROWS_JS)
+        found = page.evaluate(EXTRACT_ROWS_JS)
         text = page.evaluate("document.body.innerText")
         browser.close()
-    return rows, text
+    return found["rows"], found["dated"], text
 
 
 def rows_from_text(text: str) -> list[list[str]]:
@@ -279,19 +283,33 @@ def main() -> int:
 
     if args.from_text:
         text = args.from_text.read_text()
-        rows = rows_from_text(text)
-        no_fixtures = NO_FIXTURES_TEXT in text
+        dom_rows, dated = [], []
     else:
-        rows, text = fetch_page(TEAM_URL)
-        if not rows:
-            rows = rows_from_text(text)
-        no_fixtures = NO_FIXTURES_TEXT in text
+        dom_rows, dated, text = fetch_page(TEAM_URL)
         if TEAM not in text or "Upcoming Fixtures" not in text:
             print("ERROR: didn't get the Milton A page (blocked or changed). First 500 chars:", file=sys.stderr)
             print(text[:500], file=sys.stderr)
             return 1
+    no_fixtures = NO_FIXTURES_TEXT in text
+    text_rows = rows_from_text(text)
 
-    upcoming = [f for f in (parse_row(r) for r in rows) if f and TEAM in (f["home"], f["away"])]
+    # Read the page two ways (table cells and page text) and combine, so one layout quirk can't drop games.
+    dom_fx = [f for f in map(parse_row, dom_rows) if f and TEAM in (f["home"], f["away"])]
+    text_fx = [f for f in map(parse_row, text_rows) if f and TEAM in (f["home"], f["away"])]
+    by_uid: dict[str, dict] = {}
+    for f in dom_fx + text_fx:
+        uid = fixture_uid(f)
+        if uid not in by_uid or (f["venue"] and not by_uid[uid]["venue"]):
+            by_uid[uid] = f
+    upcoming = list(by_uid.values())
+    print(f"Fixtures read: {len(dom_fx)} from table cells, {len(text_fx)} from page text, {len(upcoming)} combined.")
+    unparsed = [r for r in dom_rows + text_rows if not parse_row(r)]
+    if dated and (len(dom_fx) != len(text_fx) or unparsed):
+        print("Diagnostics - dated table rows as seen by the browser:")
+        for r in dated:
+            print("   ", r)
+    for r in unparsed[:10]:
+        print("  could not read row:", r)
     if not upcoming and not no_fixtures:
         print("ERROR: found no fixtures and no 'no fixtures' message; page layout may have changed. "
               "Keeping the previous calendar.", file=sys.stderr)
@@ -299,6 +317,14 @@ def main() -> int:
 
     old = json.loads(STATE_PATH.read_text())["fixtures"] if STATE_PATH.exists() else {}
     merged, log = merge(old, upcoming, now)
+    removed = [l for l in log if l.startswith("removed:")]
+    if len(removed) > MAX_REMOVALS and not os.environ.get("ALLOW_BIG_CHANGES"):
+        print(f"ERROR: this run would remove {len(removed)} future games at once, which looks like a misread "
+              "rather than real fixture changes. Keeping the previous calendar. "
+              "(Set ALLOW_BIG_CHANGES=1 to accept.)", file=sys.stderr)
+        for line in removed:
+            print(" ", line, file=sys.stderr)
+        return 1
     venues = {k: v for k, v in json.loads(VENUES_PATH.read_text()).items() if not k.startswith("_")}
 
     DOCS.mkdir(exist_ok=True)

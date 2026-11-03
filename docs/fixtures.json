@@ -1,8 +1,17 @@
 {
   "team": "Milton A",
   "source": "https://fulltime.thefa.com/displayTeam.html?id=695509665",
-  "last_checked": "2026-11-03T00:51:51Z",
+  "last_checked": "2026-11-03T00:45:04Z",
   "fixtures": {
+    "2026-27-l-a-st-neots-wanderers-development@milton-a-calendar": {
+      "type": "L",
+      "date": "2026-11-07",
+      "time": "14:00",
+      "home": "St Neots Wanderers Development",
+      "away": "Milton A",
+      "venue": "PRIORY PARK (ST NEOTS) #1",
+      "stamp": "20261103T004504Z"
+    },
     "2026-27-cljc-h-stretham-reserves@milton-a-calendar": {
       "type": "CLJC",
       "date": "2026-11-14",
@@ -19,6 +28,186 @@
       "home": "St Ives Rangers",
       "away": "Milton A",
       "venue": "St Ivo Outdoor Complex #1",
+      "stamp": "20261103T004504Z"
+    },
+    "2026-27-l-a-great-paxton-united@milton-a-calendar": {
+      "type": "L",
+      "date": "2026-11-28",
+      "time": "14:00",
+      "home": "Great Paxton United",
+      "away": "Milton A",
+      "venue": "GREAT PAXTON RECREATION GROUND",
+      "stamp": "20261103T004504Z"
+    },
+    "2026-27-l-h-st-neots-wanderers@milton-a-calendar": {
+      "type": "L",
+      "date": "2026-12-05",
+      "time": "14:00",
+      "home": "Milton A",
+      "away": "St Neots Wanderers",
+      "venue": "Sycamores Recreation Ground #2",
+      "stamp": "20261103T004504Z"
+    },
+    "2026-27-l-h-cambridge-ambassadors-reserves@milton-a-calendar": {
+      "type": "L",
+      "date": "2026-12-12",
+      "time": "14:00",
+      "home": "Milton A",
+      "away": "Cambridge Ambassadors Reserves",
+      "venue": "Sycamores Recreation Ground #2",
+      "stamp": "20261103T004504Z"
+    },
+    "2026-27-l-a-cherry-hinton@milton-a-calendar": {
+      "type": "L",
+      "date": "2026-12-19",
+      "time": "14:00",
+      "home": "Cherry Hinton",
+      "away": "Milton A",
+      "venue": "CHERRY HINTON RECREATION GROUND #1",
+      "stamp": "20261103T004504Z"
+    },
+    "2026-27-l-a-burwell-reserves@milton-a-calendar": {
+      "type": "L",
+      "date": "2027-01-09",
+      "time": "14:00",
+      "home": "Burwell Reserves",
+      "away": "Milton A",
+      "venue": "BURWELL RECREATION GROUND #1",
+      "stamp": "20261103T004504Z"
+    },
+    "2026-27-l-h-great-paxton-united@milton-a-calendar": {
+      "type": "L",
+      "date": "2027-01-16",
+      "time": "14:00",
+      "home": "Milton A",
+      "away": "Great Paxton United",
+      "venue": "Sycamores Recreation Ground #2",
+      "stamp": "20261103T004504Z"
+    },
+    "2026-27-l-h-histon-hornets-reserves@milton-a-calendar": {
+      "type": "L",
+      "date": "2027-01-23",
+      "time": "14:00",
+      "home": "Milton A",
+      "away": "Histon Hornets Reserves",
+      "venue": "Sycamores Recreation Ground #2",
+      "stamp": "20261103T004504Z"
+    },
+    "2026-27-l-a-hardwick-a@milton-a-calendar": {
+      "type": "L",
+      "date": "2027-01-30",
+      "time": "14:00",
+      "home": "Hardwick A",
+      "away": "Milton A",
+      "venue": "HARDWICK RECREATION GROUND 2",
+      "stamp": "20261103T004504Z"
+    },
+    "2026-27-l-h-hardwick-a@milton-a-calendar": {
+      "type": "L",
+      "date": "2027-02-06",
+      "time": "14:00",
+      "home": "Milton A",
+      "away": "Hardwick A",
+      "venue": "Sycamores Recreation Ground #2",
+      "stamp": "20261103T004504Z"
+    },
+    "2026-27-l-h-fc-kennett-reserves@milton-a-calendar": {
+      "type": "L",
+      "date": "2027-02-13",
+      "time": "14:00",
+      "home": "Milton A",
+      "away": "FC Kennett Reserves",
+      "venue": "Sycamores Recreation Ground #2",
+      "stamp": "20261103T004504Z"
+    },
+    "2026-27-l-a-wilbrahams-reserves@milton-a-calendar": {
+      "type": "L",
+      "date": "2027-02-20",
+      "time": "14:00",
+      "home": "Wilbrahams Reserves",
+      "away": "Milton A",
+      "venue": "GREAT WILBRAHAM RECREATION GROUND",
+      "stamp": "20261103T004504Z"
+    },
+    "2026-27-l-a-st-neots-wanderers@milton-a-calendar": {
+      "type": "L",
+      "date": "2027-02-27",
+      "time": "14:00",
+      "home": "St Neots Wanderers",
+      "away": "Milton A",
+      "venue": "PRIORY PARK (ST NEOTS) #1",
+      "stamp": "20261103T004504Z"
+    },
+    "2026-27-l-h-burwell-reserves@milton-a-calendar": {
+      "type": "L",
+      "date": "2027-03-13",
+      "time": "15:00",
+      "home": "Milton A",
+      "away": "Burwell Reserves",
+      "venue": "Sycamores Recreation Ground #2",
+      "stamp": "20261103T004504Z"
+    },
+    "2026-27-l-h-st-neots-wanderers-development@milton-a-calendar": {
+      "type": "L",
+      "date": "2027-04-03",
+      "time": "15:00",
+      "home": "Milton A",
+      "away": "St Neots Wanderers Development",
+      "venue": "Sycamores Recreation Ground #2",
+      "stamp": "20261103T004504Z"
+    },
+    "2026-27-l-a-isleham-united-reserves@milton-a-calendar": {
+      "type": "L",
+      "date": "2027-04-10",
+      "time": "15:00",
+      "home": "Isleham United Reserves",
+      "away": "Milton A",
+      "venue": "ISLEHAM RECREATION GROUND #1",
+      "stamp": "20261103T004504Z"
+    },
+    "2026-27-l-h-cherry-hinton@milton-a-calendar": {
+      "type": "L",
+      "date": "2027-04-17",
+      "time": "15:00",
+      "home": "Milton A",
+      "away": "Cherry Hinton",
+      "venue": "Sycamores Recreation Ground #2",
+      "stamp": "20261103T004504Z"
+    },
+    "2026-27-l-h-wilbrahams-reserves@milton-a-calendar": {
+      "type": "L",
+      "date": "2027-04-20",
+      "time": "18:15",
+      "home": "Milton A",
+      "away": "Wilbrahams Reserves",
+      "venue": "Sycamores Recreation Ground #2",
+      "stamp": "20261103T004504Z"
+    },
+    "2026-27-l-h-isleham-united-reserves@milton-a-calendar": {
+      "type": "L",
+      "date": "2027-04-24",
+      "time": "15:00",
+      "home": "Milton A",
+      "away": "Isleham United Reserves",
+      "venue": "Sycamores Recreation Ground #2",
+      "stamp": "20261103T004504Z"
+    },
+    "2026-27-l-h-stretham-reserves@milton-a-calendar": {
+      "type": "L",
+      "date": "2027-04-27",
+      "time": "18:15",
+      "home": "Milton A",
+      "away": "Stretham Reserves",
+      "venue": "Sycamores Recreation Ground #2",
+      "stamp": "20261103T004504Z"
+    },
+    "2026-27-l-a-cambridge-ambassadors-reserves@milton-a-calendar": {
+      "type": "L",
+      "date": "2027-05-01",
+      "time": "15:00",
+      "home": "Cambridge Ambassadors Reserves",
+      "away": "Milton A",
+      "venue": "Abbey Leisure",
       "stamp": "20261103T004504Z"
     }
   }
