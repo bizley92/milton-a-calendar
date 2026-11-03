@@ -27,7 +27,11 @@ from pathlib import Path
 from zoneinfo import ZoneInfo
 
 TEAM = "Milton A"
-TEAM_URL = "https://fulltime.thefa.com/displayTeam.html?id=695509665"
+# Team page for this season's division (divisionseason changes each season - update it in August),
+# plus the league's fixture list as a second source. Fixtures from both are combined.
+TEAM_URL = "https://fulltime.thefa.com/displayTeam.html?divisionseason=294450662&teamID=695509665"
+LEAGUE_FIXTURES_URL = "https://fulltime.thefa.com/fixtures.html?league=7984801"
+SOURCES = (TEAM_URL, LEAGUE_FIXTURES_URL)
 CAL_NAME = "Milton A fixtures"
 UID_DOMAIN = "milton-a-calendar"
 
@@ -68,16 +72,16 @@ EXTRACT_ROWS_JS = r"""
 """
 
 HAS_FIXTURES_JS = r"""
-() => /Upcoming Fixtures/i.test(document.body.innerText)
-      && (/\d{2}\/\d{2}\/\d{2}[^\n]*\bVS\b/i.test(document.body.innerText)
-          || document.body.innerText.includes('There are currently no fixtures to show'))
+() => /\d{2}\/\d{2}\/\d{2}[^\n]*\bVS\b/i.test(document.body.innerText)
+      || document.body.innerText.includes('There are currently no fixtures to show')
 """
 
 
-def fetch_page(url: str) -> tuple[list[list[str]], list[list[str]], str]:
-    """Load the team page in headless Chromium; return (fixture rows, dated rows for debugging, page text)."""
+def fetch_pages(urls) -> list[dict]:
+    """Load each page in headless Chromium; return per page: url, fixture rows, dated rows (debug), text, error."""
     from playwright.sync_api import sync_playwright
 
+    results = []
     with sync_playwright() as p:
         browser = p.chromium.launch()
         page = browser.new_page(
@@ -86,15 +90,20 @@ def fetch_page(url: str) -> tuple[list[list[str]], list[list[str]], str]:
             user_agent=("Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 "
                         "(KHTML, like Gecko) Chrome/130.0.0.0 Safari/537.36"),
         )
-        page.goto(url, wait_until="domcontentloaded", timeout=60_000)
-        try:
-            page.wait_for_function(HAS_FIXTURES_JS, timeout=45_000)
-        except Exception:
-            pass  # judged below from whatever loaded
-        found = page.evaluate(EXTRACT_ROWS_JS)
-        text = page.evaluate("document.body.innerText")
+        for url in urls:
+            try:
+                page.goto(url, wait_until="domcontentloaded", timeout=60_000)
+                try:
+                    page.wait_for_function(HAS_FIXTURES_JS, timeout=30_000)
+                except Exception:
+                    pass  # judged later from whatever loaded
+                found = page.evaluate(EXTRACT_ROWS_JS)
+                text = page.evaluate("document.body.innerText")
+                results.append({"url": url, "rows": found["rows"], "dated": found["dated"], "text": text, "error": None})
+            except Exception as e:  # one bad page shouldn't stop the other source
+                results.append({"url": url, "rows": [], "dated": [], "text": "", "error": str(e)[:300]})
         browser.close()
-    return found["rows"], found["dated"], text
+    return results
 
 
 def rows_from_text(text: str) -> list[list[str]]:
@@ -113,7 +122,7 @@ def rows_from_text(text: str) -> list[list[str]]:
 
 def parse_row(cells: list[str]) -> dict | None:
     """Turn one fixture row into a dict. Layout on Full-Time:
-    Type | Date/Time | Home | (Home) | VS | (Away) | Away | Venue  (name cells may be blank)."""
+    Type | Date/Time | Home | (Home) | VS | (Away) | Away | Venue [| Competition]  (name cells may be blank)."""
     di = next((i for i, c in enumerate(cells) if DATE_RE.search(c)), None)
     if di is None:
         return None
@@ -124,7 +133,9 @@ def parse_row(cells: list[str]) -> dict | None:
     home = next((c for c in cells[di + 1:vi] if c), "")
     tail = [c for c in cells[vi + 1:] if c]
     away = tail[0] if tail else ""
-    venue = tail[-1] if len(tail) >= 2 and tail[-1] != away else ""
+    # venue is the first cell after the (possibly repeated) away name; anything after it is e.g. the competition
+    last_away = max(i for i, c in enumerate(tail) if c == away) if tail else 0
+    venue = tail[last_away + 1] if len(tail) > last_away + 1 else ""
     if not home or not away:
         return None
     typ = cells[0] if di > 0 and cells[0] else "L"
@@ -282,34 +293,40 @@ def main() -> int:
     now = datetime.fromisoformat(args.now).astimezone(LDN) if args.now else datetime.now(LDN)
 
     if args.from_text:
-        text = args.from_text.read_text()
-        dom_rows, dated = [], []
+        pages = [{"url": str(args.from_text), "rows": [], "dated": [], "text": args.from_text.read_text(), "error": None}]
     else:
-        dom_rows, dated, text = fetch_page(TEAM_URL)
-        if TEAM not in text or "Upcoming Fixtures" not in text:
-            print("ERROR: didn't get the Milton A page (blocked or changed). First 500 chars:", file=sys.stderr)
-            print(text[:500], file=sys.stderr)
-            return 1
-    no_fixtures = NO_FIXTURES_TEXT in text
-    text_rows = rows_from_text(text)
+        pages = fetch_pages(SOURCES)
 
-    # Read the page two ways (table cells and page text) and combine, so one layout quirk can't drop games.
-    dom_fx = [f for f in map(parse_row, dom_rows) if f and TEAM in (f["home"], f["away"])]
-    text_fx = [f for f in map(parse_row, text_rows) if f and TEAM in (f["home"], f["away"])]
+    # Each page is read two ways (table cells and page text); everything is combined, team page first,
+    # so one layout quirk or one unreadable page can't drop games.
     by_uid: dict[str, dict] = {}
-    for f in dom_fx + text_fx:
-        uid = fixture_uid(f)
-        if uid not in by_uid or (f["venue"] and not by_uid[uid]["venue"]):
-            by_uid[uid] = f
+    no_fixtures = False
+    for pg in pages:
+        if pg["error"]:
+            print(f"WARNING: couldn't load {pg['url']}: {pg['error']}")
+            continue
+        text_rows = rows_from_text(pg["text"])
+        dom_fx = [f for f in map(parse_row, pg["rows"]) if f and TEAM in (f["home"], f["away"])]
+        text_fx = [f for f in map(parse_row, text_rows) if f and TEAM in (f["home"], f["away"])]
+        before = len(by_uid)
+        for f in dom_fx + text_fx:
+            uid = fixture_uid(f)
+            if uid not in by_uid or (f["venue"] and not by_uid[uid]["venue"]):
+                by_uid[uid] = f
+        print(f"{pg['url']}: {len(dom_fx)} Milton A fixtures from table cells, {len(text_fx)} from page text, "
+              f"{len(by_uid) - before} not already found.")
+        if pg["url"] == TEAM_URL or args.from_text:
+            no_fixtures = no_fixtures or NO_FIXTURES_TEXT in pg["text"]
+        if not args.from_text and pg["url"] == TEAM_URL and TEAM not in pg["text"]:
+            print("WARNING: the team page didn't mention Milton A (blocked or changed). Start of page:")
+            print("   ", pg["text"][:300].replace("\n", " | "))
+        if pg["dated"] and len(dom_fx) != len(text_fx):
+            print("  Diagnostics - dated table rows as seen by the browser:")
+            for r in pg["dated"]:
+                print("     ", r)
+        for r in [r for r in pg["rows"] + text_rows if not parse_row(r)][:10]:
+            print("  could not read row:", r)
     upcoming = list(by_uid.values())
-    print(f"Fixtures read: {len(dom_fx)} from table cells, {len(text_fx)} from page text, {len(upcoming)} combined.")
-    unparsed = [r for r in dom_rows + text_rows if not parse_row(r)]
-    if dated and (len(dom_fx) != len(text_fx) or unparsed):
-        print("Diagnostics - dated table rows as seen by the browser:")
-        for r in dated:
-            print("   ", r)
-    for r in unparsed[:10]:
-        print("  could not read row:", r)
     if not upcoming and not no_fixtures:
         print("ERROR: found no fixtures and no 'no fixtures' message; page layout may have changed. "
               "Keeping the previous calendar.", file=sys.stderr)
@@ -330,7 +347,7 @@ def main() -> int:
     DOCS.mkdir(exist_ok=True)
     ICS_PATH.write_text(build_ics(merged, venues), newline="")
     STATE_PATH.write_text(json.dumps({
-        "team": TEAM, "source": TEAM_URL,
+        "team": TEAM, "sources": list(SOURCES),
         "last_checked": now.astimezone(timezone.utc).strftime("%Y-%m-%dT%H:%M:%SZ"),
         "fixtures": dict(sorted(merged.items(), key=lambda kv: kickoff(kv[1]))),
     }, indent=2) + "\n")

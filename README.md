@@ -21,15 +21,22 @@ GitHub Pages must be set to deploy from the `main` branch, `/docs` folder.
 ## How it updates
 
 `.github/workflows/update-calendar.yml` runs every morning (and on demand from the
-Actions tab → *Update fixtures calendar* → *Run workflow*). It opens the Full-Time team page
-in a headless browser, reads **Upcoming Fixtures**, and merges it with `docs/fixtures.json`:
+Actions tab → *Update fixtures calendar* → *Run workflow*). In a headless browser it reads Milton A's
+fixtures from two Full-Time pages, combines them, and merges the result with `docs/fixtures.json`:
+
+1. the [team page for this season's division](https://fulltime.thefa.com/displayTeam.html?divisionseason=294450662&teamID=695509665) (Upcoming Fixtures, including cup ties)
+2. the [league fixture list](https://fulltime.thefa.com/fixtures.html?league=7984801)
+
+Each season the team page's `divisionseason` number changes: update `TEAM_URL` at the top of
+`build_calendar.py` in August.
 
 - moved games keep the same event, so they move in your calendar rather than duplicating
 - new fixtures (e.g. the next cup round) are added
 - games withdrawn from Full-Time are removed
 - games already played stay in the calendar
 
-If Full-Time can't be read, the run fails without touching the calendar and GitHub emails you.
+If Full-Time can't be read, or a run would remove more than 3 upcoming games at once (a sign of a misread),
+it fails without touching the calendar and GitHub emails you.
 
 ## Settings
 

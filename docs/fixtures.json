@@ -1,7 +1,10 @@
 {
   "team": "Milton A",
-  "source": "https://fulltime.thefa.com/displayTeam.html?id=695509665",
-  "last_checked": "2026-11-03T00:45:04Z",
+  "sources": [
+    "https://fulltime.thefa.com/displayTeam.html?divisionseason=294450662&teamID=695509665",
+    "https://fulltime.thefa.com/fixtures.html?league=7984801"
+  ],
+  "last_checked": "2026-11-03T00:45:00Z",
   "fixtures": {
     "2026-27-l-a-st-neots-wanderers-development@milton-a-calendar": {
       "type": "L",
