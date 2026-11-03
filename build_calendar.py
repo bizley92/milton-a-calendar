@@ -303,7 +303,7 @@ def main() -> int:
     no_fixtures = False
     for pg in pages:
         if pg["error"]:
-            print(f"WARNING: couldn't load {pg['url']}: {pg['error']}")
+            print(f"WARNING: couldn't load {pg['url']} - {pg['error']}")
             continue
         text_rows = rows_from_text(pg["text"])
         dom_fx = [f for f in map(parse_row, pg["rows"]) if f and TEAM in (f["home"], f["away"])]
@@ -313,8 +313,8 @@ def main() -> int:
             uid = fixture_uid(f)
             if uid not in by_uid or (f["venue"] and not by_uid[uid]["venue"]):
                 by_uid[uid] = f
-        print(f"{pg['url']}: {len(dom_fx)} Milton A fixtures from table cells, {len(text_fx)} from page text, "
-              f"{len(by_uid) - before} not already found.")
+        print(f"{len(dom_fx)} Milton A fixtures from table cells, {len(text_fx)} from page text, "
+              f"{len(by_uid) - before} not already found - from {pg['url']}")
         if pg["url"] == TEAM_URL or args.from_text:
             no_fixtures = no_fixtures or NO_FIXTURES_TEXT in pg["text"]
         if not args.from_text and pg["url"] == TEAM_URL and TEAM not in pg["text"]:
