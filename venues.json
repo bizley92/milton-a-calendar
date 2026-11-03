@@ -1,0 +1,13 @@
+{
+  "_comment": "Full-Time venue name (upper case, pitch number removed) -> place shown in Calendar, postal address, and map pin (from the ground's postcode). Unknown venues fall back to the Full-Time name with no map pin.",
+  "SYCAMORES RECREATION GROUND": {"title": "Sycamores Recreation Ground", "address": "The Sycamores, Milton, Cambridge CB24 6XJ", "lat": 52.241182, "lon": 0.152786},
+  "PRIORY PARK (ST NEOTS)": {"title": "Priory Park", "address": "Huntingdon Road, St Neots PE19 1RF", "lat": 52.237860, "lon": -0.258458},
+  "ST IVO OUTDOOR COMPLEX": {"title": "St Ivo Outdoor Complex", "address": "California Road, St Ives PE27 6SJ", "lat": 52.336206, "lon": -0.090260},
+  "GREAT PAXTON RECREATION GROUND": {"title": "Great Paxton Recreation Ground", "address": "High Street, Great Paxton, St Neots PE19 6RF", "lat": 52.258692, "lon": -0.229861},
+  "CHERRY HINTON RECREATION GROUND": {"title": "Cherry Hinton Recreation Ground", "address": "High Street, Cherry Hinton, Cambridge CB1 9HE", "lat": 52.184456, "lon": 0.175616},
+  "BURWELL RECREATION GROUND": {"title": "Burwell Recreation Ground", "address": "Weirs Drove, Burwell, Cambridge CB25 0EZ", "lat": 52.281339, "lon": 0.321310},
+  "HARDWICK RECREATION GROUND": {"title": "Hardwick Recreation Ground", "address": "Egremont Road, Hardwick, Cambridge CB23 7XR", "lat": 52.212853, "lon": 0.008197},
+  "GREAT WILBRAHAM RECREATION GROUND": {"title": "Great Wilbraham Recreation Ground", "address": "Angle End, Great Wilbraham, Cambridge CB21 5JQ", "lat": 52.194731, "lon": 0.264614},
+  "ISLEHAM RECREATION GROUND": {"title": "Isleham Recreation Ground", "address": "Mill Street, Isleham, Ely CB7 5RY", "lat": 52.341105, "lon": 0.410412},
+  "ABBEY LEISURE": {"title": "Abbey Leisure Complex", "address": "Pool Way, Whitehill Road, Cambridge CB5 8NT", "lat": 52.209292, "lon": 0.154508}
+}

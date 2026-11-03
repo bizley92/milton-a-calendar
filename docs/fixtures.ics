@@ -1,0 +1,610 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//milton-a-calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+X-WR-CALNAME:Milton A fixtures
+X-WR-TIMEZONE:Europe/London
+REFRESH-INTERVAL;VALUE=DURATION:PT12H
+X-PUBLISHED-TTL:PT12H
+BEGIN:VEVENT
+UID:2026-27-l-a-st-neots-wanderers-development@milton-a-calendar
+DTSTAMP:20261103T004504Z
+LAST-MODIFIED:20261103T004504Z
+DTSTART:20261107T130000Z
+DTEND:20261107T160000Z
+SUMMARY:St Neots Wanderers Development v Milton A (A) - KO 14:00
+LOCATION:Priory Park\nHuntingdon Road\, St Neots PE19 1RF
+X-APPLE-STRUCTURED-LOCATION;VALUE=URI;X-ADDRESS="Huntingdon Road, St Neots 
+ PE19 1RF";X-APPLE-RADIUS=100;X-TITLE="Priory Park":geo:52.237860,-0.258458
+DESCRIPTION:Meet 13:00\, kick-off 14:00.\nLeague\, away v St Neots Wanderer
+ s Development.\nPitch 1\nFull-Time: https://fulltime.thefa.com/displayTeam
+ .html?id=695509665
+BEGIN:VALARM
+ACTION:DISPLAY
+TRIGGER;RELATED=START:-P1D
+DESCRIPTION:Tomorrow: St Neots Wanderers Development v Milton A (A) - KO 14
+ :00
+END:VALARM
+BEGIN:VALARM
+ACTION:DISPLAY
+TRIGGER;RELATED=START:-PT1H
+DESCRIPTION:In 1 hour: St Neots Wanderers Development v Milton A (A) - KO 1
+ 4:00
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:2026-27-cljc-h-stretham-reserves@milton-a-calendar
+DTSTAMP:20261103T004504Z
+LAST-MODIFIED:20261103T004504Z
+DTSTART:20261114T124500Z
+DTEND:20261114T154500Z
+SUMMARY:Milton A v Stretham Reserves (H) - Cup (CLJC) - KO 13:45
+LOCATION:Sycamores Recreation Ground\nThe Sycamores\, Milton\, Cambridge CB
+ 24 6XJ
+X-APPLE-STRUCTURED-LOCATION;VALUE=URI;X-ADDRESS="The Sycamores, Milton, Cam
+ bridge CB24 6XJ";X-APPLE-RADIUS=100;X-TITLE="Sycamores Recreation Ground":
+ geo:52.241182,0.152786
+DESCRIPTION:Meet 12:45\, kick-off 13:45.\nCup (CLJC)\, home v Stretham Rese
+ rves.\nPitch 2\nFull-Time: https://fulltime.thefa.com/displayTeam.html?id=
+ 695509665
+BEGIN:VALARM
+ACTION:DISPLAY
+TRIGGER;RELATED=START:-P1D
+DESCRIPTION:Tomorrow: Milton A v Stretham Reserves (H) - Cup (CLJC) - KO 13
+ :45
+END:VALARM
+BEGIN:VALARM
+ACTION:DISPLAY
+TRIGGER;RELATED=START:-PT1H
+DESCRIPTION:In 1 hour: Milton A v Stretham Reserves (H) - Cup (CLJC) - KO 1
+ 3:45
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:2026-27-able-a-st-ives-rangers@milton-a-calendar
+DTSTAMP:20261103T004504Z
+LAST-MODIFIED:20261103T004504Z
+DTSTART:20261121T124500Z
+DTEND:20261121T154500Z
+SUMMARY:St Ives Rangers v Milton A (A) - Cup (ABLE) - KO 13:45
+LOCATION:St Ivo Outdoor Complex\nCalifornia Road\, St Ives PE27 6SJ
+X-APPLE-STRUCTURED-LOCATION;VALUE=URI;X-ADDRESS="California Road, St Ives P
+ E27 6SJ";X-APPLE-RADIUS=100;X-TITLE="St Ivo Outdoor Complex":geo:52.336206
+ ,-0.090260
+DESCRIPTION:Meet 12:45\, kick-off 13:45.\nCup (ABLE)\, away v St Ives Range
+ rs.\nPitch 1\nFull-Time: https://fulltime.thefa.com/displayTeam.html?id=69
+ 5509665
+BEGIN:VALARM
+ACTION:DISPLAY
+TRIGGER;RELATED=START:-P1D
+DESCRIPTION:Tomorrow: St Ives Rangers v Milton A (A) - Cup (ABLE) - KO 13:4
+ 5
+END:VALARM
+BEGIN:VALARM
+ACTION:DISPLAY
+TRIGGER;RELATED=START:-PT1H
+DESCRIPTION:In 1 hour: St Ives Rangers v Milton A (A) - Cup (ABLE) - KO 13:
+ 45
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:2026-27-l-a-great-paxton-united@milton-a-calendar
+DTSTAMP:20261103T004504Z
+LAST-MODIFIED:20261103T004504Z
+DTSTART:20261128T130000Z
+DTEND:20261128T160000Z
+SUMMARY:Great Paxton United v Milton A (A) - KO 14:00
+LOCATION:Great Paxton Recreation Ground\nHigh Street\, Great Paxton\, St Ne
+ ots PE19 6RF
+X-APPLE-STRUCTURED-LOCATION;VALUE=URI;X-ADDRESS="High Street, Great Paxton,
+  St Neots PE19 6RF";X-APPLE-RADIUS=100;X-TITLE="Great Paxton Recreation Gr
+ ound":geo:52.258692,-0.229861
+DESCRIPTION:Meet 13:00\, kick-off 14:00.\nLeague\, away v Great Paxton Unit
+ ed.\nFull-Time: https://fulltime.thefa.com/displayTeam.html?id=695509665
+BEGIN:VALARM
+ACTION:DISPLAY
+TRIGGER;RELATED=START:-P1D
+DESCRIPTION:Tomorrow: Great Paxton United v Milton A (A) - KO 14:00
+END:VALARM
+BEGIN:VALARM
+ACTION:DISPLAY
+TRIGGER;RELATED=START:-PT1H
+DESCRIPTION:In 1 hour: Great Paxton United v Milton A (A) - KO 14:00
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:2026-27-l-h-st-neots-wanderers@milton-a-calendar
+DTSTAMP:20261103T004504Z
+LAST-MODIFIED:20261103T004504Z
+DTSTART:20261205T130000Z
+DTEND:20261205T160000Z
+SUMMARY:Milton A v St Neots Wanderers (H) - KO 14:00
+LOCATION:Sycamores Recreation Ground\nThe Sycamores\, Milton\, Cambridge CB
+ 24 6XJ
+X-APPLE-STRUCTURED-LOCATION;VALUE=URI;X-ADDRESS="The Sycamores, Milton, Cam
+ bridge CB24 6XJ";X-APPLE-RADIUS=100;X-TITLE="Sycamores Recreation Ground":
+ geo:52.241182,0.152786
+DESCRIPTION:Meet 13:00\, kick-off 14:00.\nLeague\, home v St Neots Wanderer
+ s.\nPitch 2\nFull-Time: https://fulltime.thefa.com/displayTeam.html?id=695
+ 509665
+BEGIN:VALARM
+ACTION:DISPLAY
+TRIGGER;RELATED=START:-P1D
+DESCRIPTION:Tomorrow: Milton A v St Neots Wanderers (H) - KO 14:00
+END:VALARM
+BEGIN:VALARM
+ACTION:DISPLAY
+TRIGGER;RELATED=START:-PT1H
+DESCRIPTION:In 1 hour: Milton A v St Neots Wanderers (H) - KO 14:00
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:2026-27-l-h-cambridge-ambassadors-reserves@milton-a-calendar
+DTSTAMP:20261103T004504Z
+LAST-MODIFIED:20261103T004504Z
+DTSTART:20261212T130000Z
+DTEND:20261212T160000Z
+SUMMARY:Milton A v Cambridge Ambassadors Reserves (H) - KO 14:00
+LOCATION:Sycamores Recreation Ground\nThe Sycamores\, Milton\, Cambridge CB
+ 24 6XJ
+X-APPLE-STRUCTURED-LOCATION;VALUE=URI;X-ADDRESS="The Sycamores, Milton, Cam
+ bridge CB24 6XJ";X-APPLE-RADIUS=100;X-TITLE="Sycamores Recreation Ground":
+ geo:52.241182,0.152786
+DESCRIPTION:Meet 13:00\, kick-off 14:00.\nLeague\, home v Cambridge Ambassa
+ dors Reserves.\nPitch 2\nFull-Time: https://fulltime.thefa.com/displayTeam
+ .html?id=695509665
+BEGIN:VALARM
+ACTION:DISPLAY
+TRIGGER;RELATED=START:-P1D
+DESCRIPTION:Tomorrow: Milton A v Cambridge Ambassadors Reserves (H) - KO 14
+ :00
+END:VALARM
+BEGIN:VALARM
+ACTION:DISPLAY
+TRIGGER;RELATED=START:-PT1H
+DESCRIPTION:In 1 hour: Milton A v Cambridge Ambassadors Reserves (H) - KO 1
+ 4:00
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:2026-27-l-a-cherry-hinton@milton-a-calendar
+DTSTAMP:20261103T004504Z
+LAST-MODIFIED:20261103T004504Z
+DTSTART:20261219T130000Z
+DTEND:20261219T160000Z
+SUMMARY:Cherry Hinton v Milton A (A) - KO 14:00
+LOCATION:Cherry Hinton Recreation Ground\nHigh Street\, Cherry Hinton\, Cam
+ bridge CB1 9HE
+X-APPLE-STRUCTURED-LOCATION;VALUE=URI;X-ADDRESS="High Street, Cherry Hinton
+ , Cambridge CB1 9HE";X-APPLE-RADIUS=100;X-TITLE="Cherry Hinton Recreation 
+ Ground":geo:52.184456,0.175616
+DESCRIPTION:Meet 13:00\, kick-off 14:00.\nLeague\, away v Cherry Hinton.\nP
+ itch 1\nFull-Time: https://fulltime.thefa.com/displayTeam.html?id=69550966
+ 5
+BEGIN:VALARM
+ACTION:DISPLAY
+TRIGGER;RELATED=START:-P1D
+DESCRIPTION:Tomorrow: Cherry Hinton v Milton A (A) - KO 14:00
+END:VALARM
+BEGIN:VALARM
+ACTION:DISPLAY
+TRIGGER;RELATED=START:-PT1H
+DESCRIPTION:In 1 hour: Cherry Hinton v Milton A (A) - KO 14:00
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:2026-27-l-a-burwell-reserves@milton-a-calendar
+DTSTAMP:20261103T004504Z
+LAST-MODIFIED:20261103T004504Z
+DTSTART:20270109T130000Z
+DTEND:20270109T160000Z
+SUMMARY:Burwell Reserves v Milton A (A) - KO 14:00
+LOCATION:Burwell Recreation Ground\nWeirs Drove\, Burwell\, Cambridge CB25 
+ 0EZ
+X-APPLE-STRUCTURED-LOCATION;VALUE=URI;X-ADDRESS="Weirs Drove, Burwell, Camb
+ ridge CB25 0EZ";X-APPLE-RADIUS=100;X-TITLE="Burwell Recreation Ground":geo
+ :52.281339,0.321310
+DESCRIPTION:Meet 13:00\, kick-off 14:00.\nLeague\, away v Burwell Reserves.
+ \nPitch 1\nFull-Time: https://fulltime.thefa.com/displayTeam.html?id=69550
+ 9665
+BEGIN:VALARM
+ACTION:DISPLAY
+TRIGGER;RELATED=START:-P1D
+DESCRIPTION:Tomorrow: Burwell Reserves v Milton A (A) - KO 14:00
+END:VALARM
+BEGIN:VALARM
+ACTION:DISPLAY
+TRIGGER;RELATED=START:-PT1H
+DESCRIPTION:In 1 hour: Burwell Reserves v Milton A (A) - KO 14:00
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:2026-27-l-h-great-paxton-united@milton-a-calendar
+DTSTAMP:20261103T004504Z
+LAST-MODIFIED:20261103T004504Z
+DTSTART:20270116T130000Z
+DTEND:20270116T160000Z
+SUMMARY:Milton A v Great Paxton United (H) - KO 14:00
+LOCATION:Sycamores Recreation Ground\nThe Sycamores\, Milton\, Cambridge CB
+ 24 6XJ
+X-APPLE-STRUCTURED-LOCATION;VALUE=URI;X-ADDRESS="The Sycamores, Milton, Cam
+ bridge CB24 6XJ";X-APPLE-RADIUS=100;X-TITLE="Sycamores Recreation Ground":
+ geo:52.241182,0.152786
+DESCRIPTION:Meet 13:00\, kick-off 14:00.\nLeague\, home v Great Paxton Unit
+ ed.\nPitch 2\nFull-Time: https://fulltime.thefa.com/displayTeam.html?id=69
+ 5509665
+BEGIN:VALARM
+ACTION:DISPLAY
+TRIGGER;RELATED=START:-P1D
+DESCRIPTION:Tomorrow: Milton A v Great Paxton United (H) - KO 14:00
+END:VALARM
+BEGIN:VALARM
+ACTION:DISPLAY
+TRIGGER;RELATED=START:-PT1H
+DESCRIPTION:In 1 hour: Milton A v Great Paxton United (H) - KO 14:00
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:2026-27-l-h-histon-hornets-reserves@milton-a-calendar
+DTSTAMP:20261103T004504Z
+LAST-MODIFIED:20261103T004504Z
+DTSTART:20270123T130000Z
+DTEND:20270123T160000Z
+SUMMARY:Milton A v Histon Hornets Reserves (H) - KO 14:00
+LOCATION:Sycamores Recreation Ground\nThe Sycamores\, Milton\, Cambridge CB
+ 24 6XJ
+X-APPLE-STRUCTURED-LOCATION;VALUE=URI;X-ADDRESS="The Sycamores, Milton, Cam
+ bridge CB24 6XJ";X-APPLE-RADIUS=100;X-TITLE="Sycamores Recreation Ground":
+ geo:52.241182,0.152786
+DESCRIPTION:Meet 13:00\, kick-off 14:00.\nLeague\, home v Histon Hornets Re
+ serves.\nPitch 2\nFull-Time: https://fulltime.thefa.com/displayTeam.html?i
+ d=695509665
+BEGIN:VALARM
+ACTION:DISPLAY
+TRIGGER;RELATED=START:-P1D
+DESCRIPTION:Tomorrow: Milton A v Histon Hornets Reserves (H) - KO 14:00
+END:VALARM
+BEGIN:VALARM
+ACTION:DISPLAY
+TRIGGER;RELATED=START:-PT1H
+DESCRIPTION:In 1 hour: Milton A v Histon Hornets Reserves (H) - KO 14:00
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:2026-27-l-a-hardwick-a@milton-a-calendar
+DTSTAMP:20261103T004504Z
+LAST-MODIFIED:20261103T004504Z
+DTSTART:20270130T130000Z
+DTEND:20270130T160000Z
+SUMMARY:Hardwick A v Milton A (A) - KO 14:00
+LOCATION:Hardwick Recreation Ground\nEgremont Road\, Hardwick\, Cambridge C
+ B23 7XR
+X-APPLE-STRUCTURED-LOCATION;VALUE=URI;X-ADDRESS="Egremont Road, Hardwick, C
+ ambridge CB23 7XR";X-APPLE-RADIUS=100;X-TITLE="Hardwick Recreation Ground"
+ :geo:52.212853,0.008197
+DESCRIPTION:Meet 13:00\, kick-off 14:00.\nLeague\, away v Hardwick A.\nPitc
+ h 2\nFull-Time: https://fulltime.thefa.com/displayTeam.html?id=695509665
+BEGIN:VALARM
+ACTION:DISPLAY
+TRIGGER;RELATED=START:-P1D
+DESCRIPTION:Tomorrow: Hardwick A v Milton A (A) - KO 14:00
+END:VALARM
+BEGIN:VALARM
+ACTION:DISPLAY
+TRIGGER;RELATED=START:-PT1H
+DESCRIPTION:In 1 hour: Hardwick A v Milton A (A) - KO 14:00
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:2026-27-l-h-hardwick-a@milton-a-calendar
+DTSTAMP:20261103T004504Z
+LAST-MODIFIED:20261103T004504Z
+DTSTART:20270206T130000Z
+DTEND:20270206T160000Z
+SUMMARY:Milton A v Hardwick A (H) - KO 14:00
+LOCATION:Sycamores Recreation Ground\nThe Sycamores\, Milton\, Cambridge CB
+ 24 6XJ
+X-APPLE-STRUCTURED-LOCATION;VALUE=URI;X-ADDRESS="The Sycamores, Milton, Cam
+ bridge CB24 6XJ";X-APPLE-RADIUS=100;X-TITLE="Sycamores Recreation Ground":
+ geo:52.241182,0.152786
+DESCRIPTION:Meet 13:00\, kick-off 14:00.\nLeague\, home v Hardwick A.\nPitc
+ h 2\nFull-Time: https://fulltime.thefa.com/displayTeam.html?id=695509665
+BEGIN:VALARM
+ACTION:DISPLAY
+TRIGGER;RELATED=START:-P1D
+DESCRIPTION:Tomorrow: Milton A v Hardwick A (H) - KO 14:00
+END:VALARM
+BEGIN:VALARM
+ACTION:DISPLAY
+TRIGGER;RELATED=START:-PT1H
+DESCRIPTION:In 1 hour: Milton A v Hardwick A (H) - KO 14:00
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:2026-27-l-h-fc-kennett-reserves@milton-a-calendar
+DTSTAMP:20261103T004504Z
+LAST-MODIFIED:20261103T004504Z
+DTSTART:20270213T130000Z
+DTEND:20270213T160000Z
+SUMMARY:Milton A v FC Kennett Reserves (H) - KO 14:00
+LOCATION:Sycamores Recreation Ground\nThe Sycamores\, Milton\, Cambridge CB
+ 24 6XJ
+X-APPLE-STRUCTURED-LOCATION;VALUE=URI;X-ADDRESS="The Sycamores, Milton, Cam
+ bridge CB24 6XJ";X-APPLE-RADIUS=100;X-TITLE="Sycamores Recreation Ground":
+ geo:52.241182,0.152786
+DESCRIPTION:Meet 13:00\, kick-off 14:00.\nLeague\, home v FC Kennett Reserv
+ es.\nPitch 2\nFull-Time: https://fulltime.thefa.com/displayTeam.html?id=69
+ 5509665
+BEGIN:VALARM
+ACTION:DISPLAY
+TRIGGER;RELATED=START:-P1D
+DESCRIPTION:Tomorrow: Milton A v FC Kennett Reserves (H) - KO 14:00
+END:VALARM
+BEGIN:VALARM
+ACTION:DISPLAY
+TRIGGER;RELATED=START:-PT1H
+DESCRIPTION:In 1 hour: Milton A v FC Kennett Reserves (H) - KO 14:00
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:2026-27-l-a-wilbrahams-reserves@milton-a-calendar
+DTSTAMP:20261103T004504Z
+LAST-MODIFIED:20261103T004504Z
+DTSTART:20270220T130000Z
+DTEND:20270220T160000Z
+SUMMARY:Wilbrahams Reserves v Milton A (A) - KO 14:00
+LOCATION:Great Wilbraham Recreation Ground\nAngle End\, Great Wilbraham\, C
+ ambridge CB21 5JQ
+X-APPLE-STRUCTURED-LOCATION;VALUE=URI;X-ADDRESS="Angle End, Great Wilbraham
+ , Cambridge CB21 5JQ";X-APPLE-RADIUS=100;X-TITLE="Great Wilbraham Recreati
+ on Ground":geo:52.194731,0.264614
+DESCRIPTION:Meet 13:00\, kick-off 14:00.\nLeague\, away v Wilbrahams Reserv
+ es.\nFull-Time: https://fulltime.thefa.com/displayTeam.html?id=695509665
+BEGIN:VALARM
+ACTION:DISPLAY
+TRIGGER;RELATED=START:-P1D
+DESCRIPTION:Tomorrow: Wilbrahams Reserves v Milton A (A) - KO 14:00
+END:VALARM
+BEGIN:VALARM
+ACTION:DISPLAY
+TRIGGER;RELATED=START:-PT1H
+DESCRIPTION:In 1 hour: Wilbrahams Reserves v Milton A (A) - KO 14:00
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:2026-27-l-a-st-neots-wanderers@milton-a-calendar
+DTSTAMP:20261103T004504Z
+LAST-MODIFIED:20261103T004504Z
+DTSTART:20270227T130000Z
+DTEND:20270227T160000Z
+SUMMARY:St Neots Wanderers v Milton A (A) - KO 14:00
+LOCATION:Priory Park\nHuntingdon Road\, St Neots PE19 1RF
+X-APPLE-STRUCTURED-LOCATION;VALUE=URI;X-ADDRESS="Huntingdon Road, St Neots 
+ PE19 1RF";X-APPLE-RADIUS=100;X-TITLE="Priory Park":geo:52.237860,-0.258458
+DESCRIPTION:Meet 13:00\, kick-off 14:00.\nLeague\, away v St Neots Wanderer
+ s.\nPitch 1\nFull-Time: https://fulltime.thefa.com/displayTeam.html?id=695
+ 509665
+BEGIN:VALARM
+ACTION:DISPLAY
+TRIGGER;RELATED=START:-P1D
+DESCRIPTION:Tomorrow: St Neots Wanderers v Milton A (A) - KO 14:00
+END:VALARM
+BEGIN:VALARM
+ACTION:DISPLAY
+TRIGGER;RELATED=START:-PT1H
+DESCRIPTION:In 1 hour: St Neots Wanderers v Milton A (A) - KO 14:00
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:2026-27-l-h-burwell-reserves@milton-a-calendar
+DTSTAMP:20261103T004504Z
+LAST-MODIFIED:20261103T004504Z
+DTSTART:20270313T140000Z
+DTEND:20270313T170000Z
+SUMMARY:Milton A v Burwell Reserves (H) - KO 15:00
+LOCATION:Sycamores Recreation Ground\nThe Sycamores\, Milton\, Cambridge CB
+ 24 6XJ
+X-APPLE-STRUCTURED-LOCATION;VALUE=URI;X-ADDRESS="The Sycamores, Milton, Cam
+ bridge CB24 6XJ";X-APPLE-RADIUS=100;X-TITLE="Sycamores Recreation Ground":
+ geo:52.241182,0.152786
+DESCRIPTION:Meet 14:00\, kick-off 15:00.\nLeague\, home v Burwell Reserves.
+ \nPitch 2\nFull-Time: https://fulltime.thefa.com/displayTeam.html?id=69550
+ 9665
+BEGIN:VALARM
+ACTION:DISPLAY
+TRIGGER;RELATED=START:-P1D
+DESCRIPTION:Tomorrow: Milton A v Burwell Reserves (H) - KO 15:00
+END:VALARM
+BEGIN:VALARM
+ACTION:DISPLAY
+TRIGGER;RELATED=START:-PT1H
+DESCRIPTION:In 1 hour: Milton A v Burwell Reserves (H) - KO 15:00
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:2026-27-l-h-st-neots-wanderers-development@milton-a-calendar
+DTSTAMP:20261103T004504Z
+LAST-MODIFIED:20261103T004504Z
+DTSTART:20270403T130000Z
+DTEND:20270403T160000Z
+SUMMARY:Milton A v St Neots Wanderers Development (H) - KO 15:00
+LOCATION:Sycamores Recreation Ground\nThe Sycamores\, Milton\, Cambridge CB
+ 24 6XJ
+X-APPLE-STRUCTURED-LOCATION;VALUE=URI;X-ADDRESS="The Sycamores, Milton, Cam
+ bridge CB24 6XJ";X-APPLE-RADIUS=100;X-TITLE="Sycamores Recreation Ground":
+ geo:52.241182,0.152786
+DESCRIPTION:Meet 14:00\, kick-off 15:00.\nLeague\, home v St Neots Wanderer
+ s Development.\nPitch 2\nFull-Time: https://fulltime.thefa.com/displayTeam
+ .html?id=695509665
+BEGIN:VALARM
+ACTION:DISPLAY
+TRIGGER;RELATED=START:-P1D
+DESCRIPTION:Tomorrow: Milton A v St Neots Wanderers Development (H) - KO 15
+ :00
+END:VALARM
+BEGIN:VALARM
+ACTION:DISPLAY
+TRIGGER;RELATED=START:-PT1H
+DESCRIPTION:In 1 hour: Milton A v St Neots Wanderers Development (H) - KO 1
+ 5:00
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:2026-27-l-a-isleham-united-reserves@milton-a-calendar
+DTSTAMP:20261103T004504Z
+LAST-MODIFIED:20261103T004504Z
+DTSTART:20270410T130000Z
+DTEND:20270410T160000Z
+SUMMARY:Isleham United Reserves v Milton A (A) - KO 15:00
+LOCATION:Isleham Recreation Ground\nMill Street\, Isleham\, Ely CB7 5RY
+X-APPLE-STRUCTURED-LOCATION;VALUE=URI;X-ADDRESS="Mill Street, Isleham, Ely 
+ CB7 5RY";X-APPLE-RADIUS=100;X-TITLE="Isleham Recreation Ground":geo:52.341
+ 105,0.410412
+DESCRIPTION:Meet 14:00\, kick-off 15:00.\nLeague\, away v Isleham United Re
+ serves.\nPitch 1\nFull-Time: https://fulltime.thefa.com/displayTeam.html?i
+ d=695509665
+BEGIN:VALARM
+ACTION:DISPLAY
+TRIGGER;RELATED=START:-P1D
+DESCRIPTION:Tomorrow: Isleham United Reserves v Milton A (A) - KO 15:00
+END:VALARM
+BEGIN:VALARM
+ACTION:DISPLAY
+TRIGGER;RELATED=START:-PT1H
+DESCRIPTION:In 1 hour: Isleham United Reserves v Milton A (A) - KO 15:00
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:2026-27-l-h-cherry-hinton@milton-a-calendar
+DTSTAMP:20261103T004504Z
+LAST-MODIFIED:20261103T004504Z
+DTSTART:20270417T130000Z
+DTEND:20270417T160000Z
+SUMMARY:Milton A v Cherry Hinton (H) - KO 15:00
+LOCATION:Sycamores Recreation Ground\nThe Sycamores\, Milton\, Cambridge CB
+ 24 6XJ
+X-APPLE-STRUCTURED-LOCATION;VALUE=URI;X-ADDRESS="The Sycamores, Milton, Cam
+ bridge CB24 6XJ";X-APPLE-RADIUS=100;X-TITLE="Sycamores Recreation Ground":
+ geo:52.241182,0.152786
+DESCRIPTION:Meet 14:00\, kick-off 15:00.\nLeague\, home v Cherry Hinton.\nP
+ itch 2\nFull-Time: https://fulltime.thefa.com/displayTeam.html?id=69550966
+ 5
+BEGIN:VALARM
+ACTION:DISPLAY
+TRIGGER;RELATED=START:-P1D
+DESCRIPTION:Tomorrow: Milton A v Cherry Hinton (H) - KO 15:00
+END:VALARM
+BEGIN:VALARM
+ACTION:DISPLAY
+TRIGGER;RELATED=START:-PT1H
+DESCRIPTION:In 1 hour: Milton A v Cherry Hinton (H) - KO 15:00
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:2026-27-l-h-wilbrahams-reserves@milton-a-calendar
+DTSTAMP:20261103T004504Z
+LAST-MODIFIED:20261103T004504Z
+DTSTART:20270420T161500Z
+DTEND:20270420T191500Z
+SUMMARY:Milton A v Wilbrahams Reserves (H) - KO 18:15
+LOCATION:Sycamores Recreation Ground\nThe Sycamores\, Milton\, Cambridge CB
+ 24 6XJ
+X-APPLE-STRUCTURED-LOCATION;VALUE=URI;X-ADDRESS="The Sycamores, Milton, Cam
+ bridge CB24 6XJ";X-APPLE-RADIUS=100;X-TITLE="Sycamores Recreation Ground":
+ geo:52.241182,0.152786
+DESCRIPTION:Meet 17:15\, kick-off 18:15.\nLeague\, home v Wilbrahams Reserv
+ es.\nPitch 2\nFull-Time: https://fulltime.thefa.com/displayTeam.html?id=69
+ 5509665
+BEGIN:VALARM
+ACTION:DISPLAY
+TRIGGER;RELATED=START:-P1D
+DESCRIPTION:Tomorrow: Milton A v Wilbrahams Reserves (H) - KO 18:15
+END:VALARM
+BEGIN:VALARM
+ACTION:DISPLAY
+TRIGGER;RELATED=START:-PT1H
+DESCRIPTION:In 1 hour: Milton A v Wilbrahams Reserves (H) - KO 18:15
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:2026-27-l-h-isleham-united-reserves@milton-a-calendar
+DTSTAMP:20261103T004504Z
+LAST-MODIFIED:20261103T004504Z
+DTSTART:20270424T130000Z
+DTEND:20270424T160000Z
+SUMMARY:Milton A v Isleham United Reserves (H) - KO 15:00
+LOCATION:Sycamores Recreation Ground\nThe Sycamores\, Milton\, Cambridge CB
+ 24 6XJ
+X-APPLE-STRUCTURED-LOCATION;VALUE=URI;X-ADDRESS="The Sycamores, Milton, Cam
+ bridge CB24 6XJ";X-APPLE-RADIUS=100;X-TITLE="Sycamores Recreation Ground":
+ geo:52.241182,0.152786
+DESCRIPTION:Meet 14:00\, kick-off 15:00.\nLeague\, home v Isleham United Re
+ serves.\nPitch 2\nFull-Time: https://fulltime.thefa.com/displayTeam.html?i
+ d=695509665
+BEGIN:VALARM
+ACTION:DISPLAY
+TRIGGER;RELATED=START:-P1D
+DESCRIPTION:Tomorrow: Milton A v Isleham United Reserves (H) - KO 15:00
+END:VALARM
+BEGIN:VALARM
+ACTION:DISPLAY
+TRIGGER;RELATED=START:-PT1H
+DESCRIPTION:In 1 hour: Milton A v Isleham United Reserves (H) - KO 15:00
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:2026-27-l-h-stretham-reserves@milton-a-calendar
+DTSTAMP:20261103T004504Z
+LAST-MODIFIED:20261103T004504Z
+DTSTART:20270427T161500Z
+DTEND:20270427T191500Z
+SUMMARY:Milton A v Stretham Reserves (H) - KO 18:15
+LOCATION:Sycamores Recreation Ground\nThe Sycamores\, Milton\, Cambridge CB
+ 24 6XJ
+X-APPLE-STRUCTURED-LOCATION;VALUE=URI;X-ADDRESS="The Sycamores, Milton, Cam
+ bridge CB24 6XJ";X-APPLE-RADIUS=100;X-TITLE="Sycamores Recreation Ground":
+ geo:52.241182,0.152786
+DESCRIPTION:Meet 17:15\, kick-off 18:15.\nLeague\, home v Stretham Reserves
+ .\nPitch 2\nFull-Time: https://fulltime.thefa.com/displayTeam.html?id=6955
+ 09665
+BEGIN:VALARM
+ACTION:DISPLAY
+TRIGGER;RELATED=START:-P1D
+DESCRIPTION:Tomorrow: Milton A v Stretham Reserves (H) - KO 18:15
+END:VALARM
+BEGIN:VALARM
+ACTION:DISPLAY
+TRIGGER;RELATED=START:-PT1H
+DESCRIPTION:In 1 hour: Milton A v Stretham Reserves (H) - KO 18:15
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:2026-27-l-a-cambridge-ambassadors-reserves@milton-a-calendar
+DTSTAMP:20261103T004504Z
+LAST-MODIFIED:20261103T004504Z
+DTSTART:20270501T130000Z
+DTEND:20270501T160000Z
+SUMMARY:Cambridge Ambassadors Reserves v Milton A (A) - KO 15:00
+LOCATION:Abbey Leisure Complex\nPool Way\, Whitehill Road\, Cambridge CB5 8
+ NT
+X-APPLE-STRUCTURED-LOCATION;VALUE=URI;X-ADDRESS="Pool Way, Whitehill Road, 
+ Cambridge CB5 8NT";X-APPLE-RADIUS=100;X-TITLE="Abbey Leisure Complex":geo:
+ 52.209292,0.154508
+DESCRIPTION:Meet 14:00\, kick-off 15:00.\nLeague\, away v Cambridge Ambassa
+ dors Reserves.\nFull-Time: https://fulltime.thefa.com/displayTeam.html?id=
+ 695509665
+BEGIN:VALARM
+ACTION:DISPLAY
+TRIGGER;RELATED=START:-P1D
+DESCRIPTION:Tomorrow: Cambridge Ambassadors Reserves v Milton A (A) - KO 15
+ :00
+END:VALARM
+BEGIN:VALARM
+ACTION:DISPLAY
+TRIGGER;RELATED=START:-PT1H
+DESCRIPTION:In 1 hour: Cambridge Ambassadors Reserves v Milton A (A) - KO 1
+ 5:00
+END:VALARM
+END:VEVENT
+END:VCALENDAR
